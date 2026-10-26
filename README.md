@@ -1,6 +1,6 @@
-# HADIR
+# HADIR — Daily Check-in & Emotional Support
 
-> A daily check-in app featuring **Hadi**, a friendly mascot that helps people stay connected with their loved ones and take care of their emotional well-being.
+> A daily check-in app featuring **Hadi**, a friendly mascot designed to encourage emotional awareness, daily connection, and care for oneself and others.
 
 <p align="center">
   <img src="docs/screenshots/icon.png" alt="HADIR app icon" width="140">
@@ -8,59 +8,76 @@
 
 ## Table of Contents
 
-1. [Description](#description)
-2. [Key Features](#key-features)
-3. [Technology Stack](#technology-stack)
-4. [Prerequisites](#prerequisites)
-5. [Installation](#installation)
-6. [Running the App](#running-the-app)
-7. [Building the APK](#building-the-apk)
-8. [Project Structure](#project-structure)
-9. [Language](#language)
-10. [Privacy and Safety](#privacy-and-safety)
-11. [Prototype Status and Limitations](#prototype-status-and-limitations)
-12. [Team](#team)
+1. [Background](#background)
+2. [Description](#description)
+3. [Key Features](#key-features)
+4. [Technology Stack](#technology-stack)
+5. [Prerequisites](#prerequisites)
+6. [Installation](#installation)
+7. [Running the App](#running-the-app)
+8. [Building the APK](#building-the-apk)
+9. [Project Structure](#project-structure)
+10. [Language](#language)
+11. [Privacy and Safety](#privacy-and-safety)
+12. [Prototype Status and Limitations](#prototype-status-and-limitations)
+13. [Meet Hadi](#meet-hadi)
+14. [Meaning Behind HADIR](#meaning-behind-hadir)
+15. [Team](#team)
+
+## Background
+
+Suicide remains a serious global public health concern. According to the World Health Organization (WHO), more than 720,000 people die by suicide every year worldwide.
+
+Behind this issue are complex and interconnected factors, including emotional distress, loneliness, difficult life circumstances, and barriers to seeking support. Some people find it difficult to express what they feel or ask for help when they need it. Stigma surrounding mental health can make these challenges even harder to discuss.
+
+HADIR was created in response to this concern. The project explores how simple digital tools can encourage people to check in with themselves, recognize their emotional well-being, and stay connected with people who care about them.
+
+HADIR is built around a simple idea: **being present matters**. A small daily check-in cannot solve every problem, but it can be a starting point for reflection, connection, and reaching out for support.
+
+*Reference: [World Health Organization — Suicide](https://www.who.int/news-room/fact-sheets/detail/suicide).*
 
 ## Description
 
-Many people feel anxious, afraid of losing someone, or lonely, but find it difficult to ask for help. HADIR encourages users to complete a simple **daily check-in**. If a user stops checking in for several days, the system is designed to notify the **emergency contacts** selected by that user.
+HADIR is a mobile application prototype focused on daily check-ins, emotional self-awareness, and personal connection. It encourages users to build a simple habit of acknowledging how they are doing while providing features such as mood tracking, a private diary, an emotional well-being check, and emergency contact settings.
 
-Users are accompanied by **Hadi**, a mascot who waves, thinks, hugs a heart, and carries letters. Hadi makes the daily check-in habit feel warm and non-judgmental.
+Users are accompanied by **Hadi**, a friendly mascot whose expressions, poses, and encouraging messages make the experience feel more approachable and less judgmental.
 
-The name **HADIR** comes from the Indonesian word *hadir*, meaning “to be present”—for yourself and for others.
+HADIR also explores a system in which designated emergency contacts could be notified after a user misses check-ins for a configured period. However, automatic alert emails are not yet implemented in this prototype.
 
 ## Key Features
 
 | Feature | Description |
 |---|---|
-| **Daily check-in** | A large button featuring Hadi. Before checking in, Hadi's hands are down. After checking in, Hadi raises his hands and waves while saying, “I'm here!” |
-| **Emergency contacts** | Add up to 5 contacts, set each contact's relationship, configure the number of days without a check-in before an alert, and set the alert email time. |
-| **Check-in pause** | Schedule a break from check-ins for up to 14 days without reminders or alerts. |
-| **Streaks and reports** | Track daily streaks, personal bests, an 84-day heart-shaped history, weekly summaries, and mood statistics. |
-| **Mood tracking** | Record your daily mood as Good, Okay, or Not Good. |
-| **Diary** | Write private notes stored on your device. After selecting a mood, the app offers the option to write a diary entry, which can be skipped. |
-| **Emotional Well-being Check** | Includes 100 questions across 10 sections: activities, physical well-being, anxiety, fear of loss, loneliness, mood, social relationships, thoughts about death, plans and safety, and protective factors. Results are grouped into five levels, with crisis contacts displayed when needed. |
-| **Hope Box** | Save photos of happy memories with notes and optional links. Photos can float behind the check-in button in different shapes (heart, circle, diamond, square, or star), with adjustable opacity. |
-| **Hadi and Anonymous Letters** | Tap Hadi to see random poses and encouraging messages. After several taps, Hadi leaves for 10 seconds and returns with a letter from a “stranger.” Users can also send anonymous encouraging letters. |
-| **Two languages** | Supports Indonesian and English, with automatic device-language detection or manual selection. |
-| **Text size** | Choose small, medium, or large text for accessibility. |
+| **Daily Check-in** | A main check-in button featuring Hadi. After checking in, Hadi raises his hands and waves while saying, "I'm here!" |
+| **Emergency Contacts** | Add up to five contacts, specify each relationship, configure the number of days without a check-in before an alert, and set an alert email time. Automatic alert emails are not active yet. |
+| **Check-in Pause** | Schedule a break from check-ins for up to 14 days without reminders or alerts, according to the app's configured behavior. |
+| **Streaks and Reports** | View daily streaks, personal bests, an 84-day heart-shaped history, weekly summaries, and mood statistics. |
+| **Mood Tracking** | Record a daily mood as Good, Okay, or Not Good. |
+| **Private Diary** | Write personal notes stored on the device. After selecting a mood, users can write a diary entry or skip it. |
+| **Emotional Well-being Check** | Includes 100 questions across 10 sections covering activities, physical well-being, anxiety, fear of loss, loneliness, mood, social relationships, thoughts about death, plans and safety, and protective factors. Results are grouped into five levels, with help contacts displayed when needed. This screening is not clinically validated and does not provide a diagnosis. |
+| **Hope Box** | Save photos of happy memories with notes and optional links. Photos can appear behind the check-in button in different shapes, with adjustable opacity. |
+| **Hadi and Anonymous Letters** | Tap Hadi to see different poses and encouraging messages. After several taps, Hadi temporarily leaves and returns with a letter. The current letter experience uses a predefined list; user-to-user letter delivery is not yet connected to a backend. |
+| **Two Languages** | Supports Indonesian and English, with automatic device-language detection or manual selection. |
+| **Adjustable Text Size** | Choose small, medium, or large text for accessibility. |
 
 ## Technology Stack
 
-- **Flutter** and **Dart** (Material 3)
+- **Flutter** and **Dart**, using Material 3
 - Local storage: [`shared_preferences`](https://pub.dev/packages/shared_preferences)
 - Photo picker: [`image_picker`](https://pub.dev/packages/image_picker)
 - Opening links: [`url_launcher`](https://pub.dev/packages/url_launcher)
-- Built-in widget localization: `flutter_localizations`
+- Localization: `flutter_localizations`
 - App icons: [`flutter_launcher_icons`](https://pub.dev/packages/flutter_launcher_icons)
-- Hadi is drawn directly in code using `CustomPainter`, so no image files are required and the mascot's poses can be smoothly animated.
+- Custom mascot drawing and animation using Flutter's `CustomPainter`
+
+Hadi is drawn directly in code, allowing the mascot's poses and expressions to be customized and animated without requiring separate image files for each pose.
 
 ## Prerequisites
 
-- The latest stable [Flutter SDK](https://docs.flutter.dev/get-started/install) (the Dart SDK version must match `^3.13.5` in `pubspec.yaml`)
+- The Flutter SDK version compatible with the project's `pubspec.yaml`
 - [Git](https://git-scm.com/downloads)
 - One of the following:
-  - **Android Studio** with the Android SDK, for an emulator or Android device, or
+  - **Android Studio** with the Android SDK, for an emulator or Android device
   - **Google Chrome**, to run the web version
 - An editor such as Visual Studio Code or Android Studio with the Flutter and Dart plugins
 
@@ -70,20 +87,24 @@ Check your development environment:
 flutter doctor
 ```
 
-All required components should show a check mark.
+Resolve any required toolchain issues before running the app.
 
 ## Installation
 
-```bash
-# 1. Clone the project
-git clone https://github.com/<your-username>/<your-repository>.git
-cd <your-repository>
+Clone the repository:
 
-# 2. Install dependencies
+```bash
+git clone https://github.com/taqiyyamafaza22-create/hadir-app.git
+cd hadir-app
+```
+
+Install the dependencies:
+
+```bash
 flutter pub get
 ```
 
-For iOS devices, add the photo library permission to `ios/Runner/Info.plist` (this is already included if you use the default file):
+For iOS devices, verify that the photo library permission is configured in `ios/Runner/Info.plist`:
 
 ```xml
 <key>NSPhotoLibraryUsageDescription</key>
@@ -94,14 +115,15 @@ For iOS devices, add the photo library permission to `ios/Runner/Info.plist` (th
 
 ### On an Android device
 
-1. Enable **Developer Options** and **USB debugging** on your phone, then connect it to your computer.
-2. Make sure the device is detected:
+1. Enable **Developer Options** and **USB debugging** on your phone.
+2. Connect your phone to your computer.
+3. Check whether Flutter detects the device:
 
    ```bash
    flutter devices
    ```
 
-3. Run the app:
+4. Run the application:
 
    ```bash
    flutter run
@@ -109,33 +131,47 @@ For iOS devices, add the photo library permission to `ios/Runner/Info.plist` (th
 
 ### On an Android emulator
 
-Open **Android Studio → Device Manager**, start an emulator, and run `flutter run`.
+Open **Android Studio → Device Manager**, start an emulator, and run:
 
-### In Chrome (web)
+```bash
+flutter run
+```
+
+### In Google Chrome
+
+Run the web version using:
 
 ```bash
 flutter run -d chrome
 ```
 
-> **Note:** After adding a new package with `flutter pub add ...`, stop the app and perform a full restart using `flutter run`. Hot reload alone is not sufficient for a newly added plugin.
+> **Note:** After adding a new package, stop the app and restart it with `flutter run`. A hot reload alone may not initialize a newly added plugin.
 
-### Signing in
+### Signing In
 
-Login is currently simulated for demonstration purposes. Select **Sign in with Email** or **Sign in with Google**, then enter any email address (for example, `demo@email.com`). Continue through onboarding: choose your text size and language, enter your name, and add at least one emergency contact.
+Login is currently simulated for demonstration purposes. Select **Sign in with Email** or **Sign in with Google**, then enter an email address to continue. Follow the onboarding steps, choose your text size and language, enter your name, and add at least one emergency contact.
+
+The simulated login does not authenticate a real Google account or verify an email address.
 
 ## Building the APK
+
+Build a release APK:
 
 ```bash
 flutter build apk --release
 ```
 
-The output file will be located at `build/app/outputs/flutter-apk/app-release.apk`. To create smaller APK files for different processor architectures, run:
+The output file will be located at:
+
+```text
+build/app/outputs/flutter-apk/app-release.apk
+```
+
+To create smaller APK files for different processor architectures, run:
 
 ```bash
 flutter build apk --split-per-abi
 ```
-
-Install `app-arm64-v8a-release.apk` on most modern Android phones. If prompted, allow installation from this source.
 
 If you change the app icon, regenerate it with:
 
@@ -147,56 +183,87 @@ dart run flutter_launcher_icons
 
 ```text
 lib/
-├── main.dart               # Entry point, app state, Welcome/Onboarding/Home/Report/Settings screens
-├── app_theme.dart          # Colors, buttons, styled headings, date helpers
-├── i18n.dart               # Two-language system (Text, tr, t2)
-├── i18n_strings.dart       # English <-> Indonesian translation dictionary
-├── mascot.dart             # Hadi mascot (CustomPainter, poses, and animations)
-├── hadi_companion.dart     # Hadi on the Home screen: random poses, letters, countdown
-├── letters.dart            # Anonymous letters, archive, and letter screen
+├── main.dart               # Main app, state, and primary screens
+├── app_theme.dart          # Colors and shared styling
+├── i18n.dart               # Localization helpers
+├── i18n_strings.dart       # English and Indonesian translations
+├── mascot.dart             # Hadi mascot, poses, and animations
+├── hadi_companion.dart     # Hadi interactions and letters
+├── letters.dart            # Anonymous letters and archive
 ├── diary.dart              # Private diary
-├── hope_box.dart           # Hope Box and floating photos
-├── feature_menu.dart       # Two swipeable feature cards
+├── hope_box.dart           # Hope Box and saved photos
+├── feature_menu.dart       # Feature navigation cards
 ├── splash_screen.dart      # Splash screen
 ├── screening_screens.dart  # Emotional Well-being Check screens
-├── models/models.dart      # Question, section, and answer-option models
-├── data/question_bank.dart # 100 questions
-└── services/scoring.dart   # Score calculation, risk levels, and crisis contacts
-assets/icon/                # App icon source files
-docs/screenshots/           # Screenshots for the README
+├── models/
+│   └── models.dart         # Question and answer models
+├── data/
+│   └── question_bank.dart  # Screening question bank
+└── services/
+    └── scoring.dart        # Score calculation and risk levels
+
+assets/
+└── icon/                   # App icon assets
+
+docs/
+└── screenshots/            # README images and screenshots
 ```
 
 ## Language
 
-The app supports **Indonesian and English**.
+HADIR supports **Indonesian and English**.
 
-- **Automatic (default):** follows the device language.
-- **Manual:** choose a language in **Settings → Language** or during onboarding.
+- **Automatic:** follows the device language when supported.
+- **Manual:** users can select their preferred language during onboarding or in Settings.
 
-All translations are managed in `lib/i18n_strings.dart`. To add a new text entry, add an English–Indonesian pair to that file.
+Translations are managed in `lib/i18n_strings.dart`.
 
 ## Privacy and Safety
 
-- Check-ins, moods, diary entries, Hope Box photos, and contacts are stored **only on the user's device**.
-- **Answers to the Emotional Well-being Check are not saved** and are not sent to emergency contacts.
-- Anonymous letters are selected by the system from a predefined list of encouraging messages rather than written as free text, helping prevent harassment.
-- At high risk levels, help contacts are displayed at the top of the results. A help panel also appears immediately when a user gives a positive response to a safety-related question.
-- **HADIR is not an emergency service, a diagnostic tool, or a substitute for a psychologist or psychiatrist.** In an emergency, call **112** or visit the nearest emergency department. Indonesia's Ministry of Health mental health service is listed as **119 ext. 8**. These numbers must be verified again before public release.
-- The 100 questions are based on general domains covered by instruments such as PHQ-9, GAD-7, C-SSRS, and loneliness scales, but **have not been clinically validated**. Before the app is used by real users, the questions and scoring thresholds should be reviewed by a licensed clinical psychologist.
+- Check-ins, moods, diary entries, Hope Box photos, and emergency contact details are stored locally on the user's device in the current prototype.
+- Answers to the Emotional Well-being Check are not saved and are not sent to emergency contacts.
+- Anonymous letters currently use a predefined list of encouraging messages rather than unrestricted user-submitted text.
+- Help contacts are displayed for certain screening results, and a help panel appears when a user gives a positive response to a safety-related question.
+- **HADIR is not an emergency service, a diagnostic tool, or a substitute for professional mental health care.**
+- The screening questions and scoring thresholds have not been clinically validated. They must be reviewed by a qualified mental health professional before the screening is used to guide real-world decisions.
+
+Emergency contact information and service numbers should be verified for the user's location before public release. Users experiencing an immediate emergency should contact local emergency services or seek help from a nearby hospital.
 
 ## Prototype Status and Limitations
 
-This app is a **prototype for demonstration purposes**. The following features are still simulated or are not yet connected to a server:
+HADIR is a **prototype for demonstration purposes**. Some features are implemented locally, while others require further development.
 
-| Feature | Status |
+| Feature | Current Status |
 |---|---|
-| Google and email login | Simulated locally; accepts any email address |
-| Alert emails to emergency contacts | Not sent yet; requires a backend and an email service |
-| Check-in reminders | Settings are saved, but system notifications are not active yet |
-| Anonymous letters to other users | Sending is simulated; received letters are selected from a built-in list |
-| Hope Box photos | Stored locally as small data files, with a maximum of 30 photos |
+| **Email and Google login** | Simulated locally; no real authentication |
+| **Emergency alert emails** | Not implemented; requires a backend and an email service |
+| **Check-in reminders** | Settings are saved, but system notifications are not active yet |
+| **Anonymous letters** | Uses predefined messages; user-to-user delivery is not connected to a backend |
+| **Hope Box photos** | Stored locally, with a maximum of 30 photos |
+| **Emotional Well-being Check** | Prototype screening; questions and scoring are not clinically validated |
 
-Planned improvements include authentication with Firebase Auth, a backend for alert emails and user-to-user letters (with reporting and blocking features), scheduled local notifications, and clinical validation of the screening questions.
+### Planned Improvements
+
+- Real authentication using Firebase Authentication
+- A backend and email service for emergency contact notifications
+- Scheduled local notifications
+- User-to-user anonymous letters, including reporting and blocking features
+- Review and clinical validation of the screening questions and scoring thresholds
+- Further usability, privacy, and safety testing
+
+## Meet Hadi
+
+**Hadi** is HADIR's friendly mascot and daily companion. Through expressive poses, waves, heart gestures, and encouraging messages, Hadi helps make the check-in experience feel welcoming rather than clinical or judgmental.
+
+Hadi represents warmth, care, and the reminder that people deserve to be heard and supported.
+
+## Meaning Behind HADIR
+
+The name **HADIR** comes from the Indonesian word *hadir*, meaning **"to be present."**
+
+For this project, being present means acknowledging your own feelings, taking a moment to check in with yourself, and staying connected with people who care about you.
+
+HADIR's message is simple: **be present for yourself, and for one another.**
 
 ## Team
 
@@ -207,7 +274,6 @@ Planned improvements include authentication with Firebase Auth, a backend for al
 
 ---
 
-Created for a competition. The copyright for the **Hadi** mascot and all content in this repository belongs to the team that created them.
+Created for a competition.
 
-![Home][def]
-[def]: docs/screenshots/home.png
+The Hadi mascot and original project content are the work of the team that created them.
