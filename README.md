@@ -28,36 +28,36 @@
 
 Suicide remains a serious global public health concern. According to the World Health Organization (WHO), more than 720,000 people die by suicide every year worldwide.
 
-Behind this issue are complex and interconnected factors, including emotional distress, loneliness, difficult life circumstances, and barriers to seeking support. Some people find it difficult to express what they feel or ask for help when they need it. Stigma surrounding mental health can make these challenges even harder to discuss.
+The factors associated with suicide are complex and interconnected. Emotional distress, loneliness, difficult life circumstances, and barriers to seeking support can make it harder for some people to reach out when they need help. Stigma surrounding mental health can also prevent people from discussing their experiences openly.
 
 HADIR was created in response to this concern. The project explores how simple digital tools can encourage people to check in with themselves, recognize their emotional well-being, and stay connected with people who care about them.
 
-HADIR is built around a simple idea: **being present matters**. A small daily check-in cannot solve every problem, but it can be a starting point for reflection, connection, and reaching out for support.
+HADIR is built around a simple idea: **being present matters**. A daily check-in cannot solve every problem, but it can provide an opportunity for self-reflection, connection, and reaching out for support.
 
-*Reference: [World Health Organization — Suicide](https://www.who.int/news-room/fact-sheets/detail/suicide).*
+Reference: [World Health Organization — Suicide](https://www.who.int/news-room/fact-sheets/detail/suicide).
 
 ## Description
 
-HADIR is a mobile application prototype focused on daily check-ins, emotional self-awareness, and personal connection. It encourages users to build a simple habit of acknowledging how they are doing while providing features such as mood tracking, a private diary, an emotional well-being check, and emergency contact settings.
+HADIR is a mobile application prototype focused on daily check-ins, emotional self-awareness, and personal connection. It includes features such as mood tracking, a private diary, an emotional well-being check, a Hope Box for positive memories, and emergency contact settings.
 
 Users are accompanied by **Hadi**, a friendly mascot whose expressions, poses, and encouraging messages make the experience feel more approachable and less judgmental.
 
-HADIR also explores a system in which designated emergency contacts could be notified after a user misses check-ins for a configured period. However, automatic alert emails are not yet implemented in this prototype.
+HADIR also includes settings for a potential missed-check-in alert system. However, automatic alert emails are not yet implemented, so the current prototype cannot automatically notify emergency contacts when a user misses check-ins.
 
 ## Key Features
 
 | Feature | Description |
 |---|---|
 | **Daily Check-in** | A main check-in button featuring Hadi. After checking in, Hadi raises his hands and waves while saying, "I'm here!" |
-| **Emergency Contacts** | Add up to five contacts, specify each relationship, configure the number of days without a check-in before an alert, and set an alert email time. Automatic alert emails are not active yet. |
-| **Check-in Pause** | Schedule a break from check-ins for up to 14 days without reminders or alerts, according to the app's configured behavior. |
+| **Emergency Contacts** | Add up to five contacts, specify each contact's relationship, configure the number of days without a check-in before an alert, and set an alert email time. Automatic alert emails are not yet active. |
+| **Check-in Pause** | Schedule a break from check-ins for up to 14 days. Reminder and alert behavior depends on the current implementation. |
 | **Streaks and Reports** | View daily streaks, personal bests, an 84-day heart-shaped history, weekly summaries, and mood statistics. |
 | **Mood Tracking** | Record a daily mood as Good, Okay, or Not Good. |
-| **Private Diary** | Write personal notes stored on the device. After selecting a mood, users can write a diary entry or skip it. |
+| **Private Diary** | Write personal notes stored locally on the device. After selecting a mood, users can write a diary entry or skip it. |
 | **Emotional Well-being Check** | Includes 100 questions across 10 sections covering activities, physical well-being, anxiety, fear of loss, loneliness, mood, social relationships, thoughts about death, plans and safety, and protective factors. Results are grouped into five levels, with help contacts displayed when needed. This screening is not clinically validated and does not provide a diagnosis. |
-| **Hope Box** | Save photos of happy memories with notes and optional links. Photos can appear behind the check-in button in different shapes, with adjustable opacity. |
-| **Hadi and Anonymous Letters** | Tap Hadi to see different poses and encouraging messages. After several taps, Hadi temporarily leaves and returns with a letter. The current letter experience uses a predefined list; user-to-user letter delivery is not yet connected to a backend. |
-| **Two Languages** | Supports Indonesian and English, with automatic device-language detection or manual selection. |
+| **Hope Box** | Save photos of positive memories with notes and optional links. Photos can appear behind the check-in button in different shapes, with adjustable opacity. |
+| **Hadi and Anonymous Letters** | Interact with Hadi to see different poses and encouraging messages. Hadi can temporarily leave and return with a letter. The current letter experience uses predefined messages; user-to-user letter delivery is not connected to a backend. |
+| **Language** | Currently available in English only. |
 | **Adjustable Text Size** | Choose small, medium, or large text for accessibility. |
 
 ## Technology Stack
@@ -66,7 +66,7 @@ HADIR also explores a system in which designated emergency contacts could be not
 - Local storage: [`shared_preferences`](https://pub.dev/packages/shared_preferences)
 - Photo picker: [`image_picker`](https://pub.dev/packages/image_picker)
 - Opening links: [`url_launcher`](https://pub.dev/packages/url_launcher)
-- Localization: `flutter_localizations`
+- Flutter localization support: `flutter_localizations`, if used by the current implementation
 - App icons: [`flutter_launcher_icons`](https://pub.dev/packages/flutter_launcher_icons)
 - Custom mascot drawing and animation using Flutter's `CustomPainter`
 
@@ -104,7 +104,7 @@ Install the dependencies:
 flutter pub get
 ```
 
-For iOS devices, verify that the photo library permission is configured in `ios/Runner/Info.plist`:
+If you intend to build for iOS, verify that the photo library permission is configured in `ios/Runner/Info.plist`:
 
 ```xml
 <key>NSPhotoLibraryUsageDescription</key>
@@ -113,7 +113,7 @@ For iOS devices, verify that the photo library permission is configured in `ios/
 
 ## Running the App
 
-### On an Android device
+### On an Android Device
 
 1. Enable **Developer Options** and **USB debugging** on your phone.
 2. Connect your phone to your computer.
@@ -129,7 +129,7 @@ For iOS devices, verify that the photo library permission is configured in `ios/
    flutter run
    ```
 
-### On an Android emulator
+### On an Android Emulator
 
 Open **Android Studio → Device Manager**, start an emulator, and run:
 
@@ -149,7 +149,9 @@ flutter run -d chrome
 
 ### Signing In
 
-Login is currently simulated for demonstration purposes. Select **Sign in with Email** or **Sign in with Google**, then enter an email address to continue. Follow the onboarding steps, choose your text size and language, enter your name, and add at least one emergency contact.
+Login is currently simulated for demonstration purposes. Select **Sign in with Email** or **Sign in with Google**, then enter an email address to continue.
+
+Follow the onboarding steps, choose your text size, enter your name, and add at least one emergency contact.
 
 The simulated login does not authenticate a real Google account or verify an email address.
 
@@ -181,12 +183,14 @@ dart run flutter_launcher_icons
 
 ## Project Structure
 
+The following is an overview of the main project files:
+
 ```text
 lib/
-├── main.dart               # Main app, state, and primary screens
+├── main.dart               # Main app and primary screens
 ├── app_theme.dart          # Colors and shared styling
-├── i18n.dart               # Localization helpers
-├── i18n_strings.dart       # English and Indonesian translations
+├── i18n.dart               # Language and text helpers, if used
+├── i18n_strings.dart       # App text strings, if used
 ├── mascot.dart             # Hadi mascot, poses, and animations
 ├── hadi_companion.dart     # Hadi interactions and letters
 ├── letters.dart            # Anonymous letters and archive
@@ -209,35 +213,35 @@ docs/
 └── screenshots/            # README images and screenshots
 ```
 
+File names and comments should be checked against the actual repository before publication.
+
 ## Language
 
-HADIR supports **Indonesian and English**.
+HADIR is currently available in **English only**.
 
-- **Automatic:** follows the device language when supported.
-- **Manual:** users can select their preferred language during onboarding or in Settings.
-
-Translations are managed in `lib/i18n_strings.dart`.
+The app's text strings are managed within the project's source code. Indonesian language support is not currently available in the application.
 
 ## Privacy and Safety
 
-- Check-ins, moods, diary entries, Hope Box photos, and emergency contact details are stored locally on the user's device in the current prototype.
-- Answers to the Emotional Well-being Check are not saved and are not sent to emergency contacts.
-- Anonymous letters currently use a predefined list of encouraging messages rather than unrestricted user-submitted text.
+- Check-ins, moods, diary entries, Hope Box photos, and emergency contact details are intended to be stored locally on the user's device in the current prototype.
+- Answers to the Emotional Well-being Check are not saved and are not sent to emergency contacts, according to the current implementation.
+- Anonymous letters use predefined encouraging messages rather than unrestricted user-submitted text.
 - Help contacts are displayed for certain screening results, and a help panel appears when a user gives a positive response to a safety-related question.
 - **HADIR is not an emergency service, a diagnostic tool, or a substitute for professional mental health care.**
-- The screening questions and scoring thresholds have not been clinically validated. They must be reviewed by a qualified mental health professional before the screening is used to guide real-world decisions.
+- The screening questions and scoring thresholds have not been clinically validated. They should be reviewed by qualified mental health professionals before the screening is used to guide real-world decisions.
+- Local storage does not automatically mean that all data is encrypted. Users should avoid treating the prototype as a secure medical-record system.
 
 Emergency contact information and service numbers should be verified for the user's location before public release. Users experiencing an immediate emergency should contact local emergency services or seek help from a nearby hospital.
 
 ## Prototype Status and Limitations
 
-HADIR is a **prototype for demonstration purposes**. Some features are implemented locally, while others require further development.
+HADIR is a **prototype for demonstration purposes**. Some features operate locally, while others require further development.
 
 | Feature | Current Status |
 |---|---|
 | **Email and Google login** | Simulated locally; no real authentication |
 | **Emergency alert emails** | Not implemented; requires a backend and an email service |
-| **Check-in reminders** | Settings are saved, but system notifications are not active yet |
+| **Check-in reminders** | Settings may be saved, but system notifications are not active yet |
 | **Anonymous letters** | Uses predefined messages; user-to-user delivery is not connected to a backend |
 | **Hope Box photos** | Stored locally, with a maximum of 30 photos |
 | **Emotional Well-being Check** | Prototype screening; questions and scoring are not clinically validated |
