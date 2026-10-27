@@ -274,7 +274,7 @@ HADIR's message is simple: **be present for yourself, and for one another.**
 | Name | Role |
 |---|---|
 | Taqiyya Mafaza | Team Leader, Developer / Designer |
-| Natali Rahel Rowina Sitepu | Designer |
+| Natali Rahel Rowina Sitepu | Vise Team Leader, Designer |
 
 ---
 
