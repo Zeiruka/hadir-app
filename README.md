@@ -48,7 +48,7 @@ HADIR also includes settings for a potential missed-check-in alert system. Howev
 
 | Feature | Description |
 |---|---|
-| **Daily Check-in** | A main check-in button featuring Hadi. After checking in, Hadi raises his hands and waves while saying, "I'm here!" |
+| **Daily Check-in** | A main check-in button featuring Hadi. After checking in, Hadi raises his hands and waves. |
 | **Emergency Contacts** | Add up to five contacts, specify each contact's relationship, configure the number of days without a check-in before an alert, and set an alert email time. Automatic alert emails are not yet active. |
 | **Check-in Pause** | Schedule a break from check-ins for up to 14 days. Reminder and alert behavior depends on the current implementation. |
 | **Streaks and Reports** | View daily streaks, personal bests, an 84-day heart-shaped history, weekly summaries, and mood statistics. |
